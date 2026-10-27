@@ -1,0 +1,149 @@
+onboarding = false
+
+[theme]
+name = "catppuccin"
+auto_switch = false
+
+[theme.custom]
+accent = "#FFBE89"
+panel_bg = "#151515"
+sidebar_bg = "#151515"
+active_row_bg = "#303030"
+selection_bg = "#303030"
+surface0 = "#1E1E1E"
+surface1 = "#303030"
+surface_dim = "#1E1E1E"
+overlay0 = "#696969"
+overlay1 = "#A9A9A9"
+text = "#FAFAFA"
+subtext0 = "#D4D4D4"
+mauve = "#C678DD"
+green = "#7EAB8E"
+yellow = "#FFF2AF"
+red = "#F57A7A"
+blue = "#79A0AA"
+teal = "#8DD3C3"
+peach = "#FFBE89"
+
+[terminal]
+new_cwd = "follow"
+shell_mode = "auto"
+
+[keys]
+prefix = ["ctrl+m", "alt+n"]
+help = "prefix+?"
+settings = "prefix+s"
+detach = "prefix+q"
+reload_config = "prefix+shift+r"
+open_notification_target = "prefix+o"
+workspace_picker = ["prefix+w", "prefix+e"]
+goto = "prefix+g"
+new_workspace = "prefix+shift+n"
+new_worktree = "prefix+shift+g"
+open_worktree = "prefix+shift+o"
+remove_worktree = "prefix+alt+w"
+rename_workspace = "prefix+shift+w"
+close_workspace = "prefix+shift+d"
+previous_agent = "prefix+alt+k"
+next_agent = "prefix+alt+j"
+focus_agent = "prefix+alt+1..9"
+new_tab = "prefix+c"
+rename_tab = "prefix+shift+t"
+previous_tab = "prefix+p"
+next_tab = "prefix+n"
+move_tab_previous = "prefix+shift+left"
+move_tab_next = "prefix+shift+right"
+switch_tab = "prefix+1..9"
+switch_workspace = "prefix+shift+1..9"
+close_tab = "prefix+shift+x"
+rename_pane = "prefix+shift+p"
+edit_scrollback = "prefix+shift+e"
+copy_mode = "prefix+["
+focus_pane_left = ["prefix+h", "prefix+р", "alt+h", "alt+р"]
+focus_pane_down = ["prefix+j", "prefix+о", "alt+j", "alt+о"]
+focus_pane_up = ["prefix+k", "prefix+л", "alt+k", "alt+л"]
+focus_pane_right = ["prefix+l", "prefix+д", "alt+l", "alt+д"]
+navigate_workspace_up = "up"
+navigate_workspace_down = "down"
+navigate_pane_left = ["h", "р"]
+navigate_pane_down = ["j", "о"]
+navigate_pane_up = ["k", "л"]
+navigate_pane_right = ["l", "д"]
+swap_pane_left = ["prefix+shift+h", "prefix+shift+р"]
+swap_pane_down = ["prefix+shift+j", "prefix+shift+о"]
+swap_pane_up = ["prefix+shift+k", "prefix+shift+л"]
+swap_pane_right = ["prefix+shift+l", "prefix+shift+д"]
+cycle_pane_next = "prefix+tab"
+cycle_pane_previous = "prefix+shift+tab"
+split_vertical = ["prefix+v", "prefix+percent", "prefix+backslash"]
+split_horizontal = ["prefix+minus", "prefix+double_quote", "prefix+э"]
+close_pane = "prefix+x"
+zoom = "prefix+z"
+resize_mode = "prefix+r"
+resize_pane_left = ["prefix+<", "prefix+б"]
+resize_pane_right = ["prefix+>", "prefix+ю"]
+resize_pane_down = "prefix+_"
+resize_pane_up = "prefix+plus"
+toggle_sidebar = "prefix+b"
+
+[[keys.command]]
+key = "prefix+alt+g"
+type = "popup"
+command = "lazygit"
+description = "lazygit"
+width = "90%"
+height = "90%"
+
+[[keys.command]]
+key = "prefix+alt+d"
+type = "popup"
+command = "lazydocker"
+description = "lazydocker"
+width = "90%"
+height = "90%"
+
+[[keys.command]]
+key = "prefix+t"
+type = "popup"
+command = 'exec "${SHELL:-sh}"'
+description = "scratch terminal"
+width = "80%"
+height = "80%"
+
+[ui]
+sidebar_width = 28
+sidebar_min_width = 20
+sidebar_max_width = 36
+status_indicators = "symbols"
+accent = "#FFBE89"
+pane_gaps = true
+pane_borders = "auto"
+prompt_new_tab_name = true
+tab_bar_position = "top"
+tab_bar_right = [
+  { type = "zoom" },
+  { type = "text", text = "\uf017" },
+  { type = "datetime", format = "%a %d %b %H:%M" },
+  { type = "text", text = "\uf109" },
+  { type = "hostname" },
+]
+tab_bar_right_separator = " "
+window_title = "{hostname}: {workspace}"
+
+[ui.sidebar.agents]
+row_gap = 0
+rows = [
+  ["state_icon", "machine", "workspace", "tab"],
+  ["agent"],
+]
+
+[ui.sidebar.spaces]
+row_gap = 0
+rows = [
+  ["state_icon", "workspace", "git_status"],
+  ["branch"],
+]
+
+[ui.toast]
+delivery = "terminal"
+delay_seconds = 1
